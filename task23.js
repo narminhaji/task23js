@@ -1,6 +1,6 @@
 
 const tbody = document.querySelector("table tbody");
-const addBtn = document.querySelector(".add-btn");
+const addBtn = document.querySelector(".btn");
 let allowNewRow = true;
 
 const orderRow = () => {
@@ -33,10 +33,10 @@ function saveData(e) {
     }
 
     e.target.textContent = updateable ? "Yadda saxla" : "Düzəliş et";
-    e.target.classList.toggle("save-btn");
+    e.target.classList.toggle("qeyd");
     e.target.classList.toggle("update-btn");
-    e.target.nextElementSibling.classList.toggle("cancel-btn");
-    e.target.nextElementSibling.classList.toggle("delete-btn");
+    e.target.nextElementSibling.classList.toggle("cix");
+    e.target.nextElementSibling.classList.toggle("sil");
     allowNewRow = !updateable;
 };
 
@@ -53,8 +53,8 @@ addBtn.addEventListener("click", () => {
             <td><input type="text" placeholder="Soyad"></input></td>
             <td><input type="number" placeholder="Yaş"></input></td>
             <td>
-                <button class="save-btn" onclick="saveData(event)">Yadda saxla</button>
-                <button class="cancel-btn" onclick="deleteData(event)">Sil</button>
+                <button class="qeyd" onclick="saveData(event)">Yadda saxla</button>
+                <button class="cix" onclick="deleteData(event)">Sil</button>
             </td>
         </tr>`;
     tbody.innerHTML += row;
@@ -66,7 +66,7 @@ function deleteData(e) {
     const rowToDelete = e.target.parentElement.parentElement;
     tbody.removeChild(rowToDelete);
     orderRow();
-    if (e.target.classList.contains("cancel-btn") || !tbody.firstChild) {
+    if (e.target.classList.contains("cix") || !tbody.firstChild) {
         allowNewRow = true;
     }
 }

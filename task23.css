@@ -32,16 +32,16 @@ button {
     cursor: pointer;
 }
 
-.add-btn {
+.btn {
     background-color: rgb(0, 255, 0);
 }
 
-.save-btn {
+.qeyd {
     background-color: rgb(1, 53, 1);
 }
 
-.delete-btn,
-.cancel-btn {
+.sil,
+.cix {
     background-color: rgb(137, 0, 0);
     margin-left: 5px;
 }
