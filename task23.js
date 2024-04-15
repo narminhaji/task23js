@@ -9,7 +9,7 @@ const orderRow = () => {
 };
 
 function saveData(e) {
-    let updateable = e.target.classList.contains("update-btn");
+    let updateable = e.target.classList.contains("duzelt");
     if (updateable) {
         if (!allowNewRow) {
             alert("ERROR BOŞ XANA!!!!!");
